@@ -1,6 +1,7 @@
 import scala.io.Source
 import scala.util.control._
 import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.Map
 /*val INTEGER = "INTEGER"
 val PLUS = "PLUS"
 val MINUS = "MINUS"
@@ -10,14 +11,18 @@ val EOF = "EOF"*/
 
 
 object CompilerFirstTry{ 
+	var variablef:Map[Char,Double] = Map()
+	variablef += ('e' -> 2.718281828459045)
+	variablef +=('p'->3.141592653589793)
 
-def main(args: Array[String]){ 
 	
-  	val in = new Interpreter(Source.fromFile(args(0)).mkString)
+	def main(args: Array[String]){ 
+		
+	  	val in = new Interpreter(Source.fromFile(args(0)).mkString)
 
-  	in.print()
+	  	in.print()
 
- }
+	 }
 }
 
 
@@ -34,102 +39,113 @@ class Token(tipo : String, valor: Char) {
 
 class Interpreter(archivo: String){
 	def print(){
-		println(archivo)
+		//println(archivo)
 		val texto = archivo.split('\n').map(_.trim.filter(_ >= ' ')).mkString
-		println(texto)
-		var lex = new Lexer(texto)
-		
+		//println(texto)
+		var lineas = texto.split(";")
+		var lex = new Lexer(lineas)
 	}
 
  }
 
- class Lexer(texto: String)
+ class Lexer(texto: Array[String])
  {
+
+
  	val variables = List('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
- 	var pos = 0
- 	var lista = texto.toList
- 	var tokenList = new ListBuffer[Token]()
- 	while(pos< texto.length()){
- 		get_next_t(lista(pos))
+ 	for(x <- texto)
+ 	{
+ 		var lineList = get_next_t(x) 		
+		for(d<-lineList)
+		{	
+			d.print
+		}
 
-		pos=pos+1
-		
-	}
-	for(d<-tokenList)
-	{
-		d.print()
-	}
-
-	var pars = new Parser(tokenList)
-
-	def get_next_t(c: Char)  
+		var pars = new Parser(lineList)
+ 	}
+ 
+ 	
+ 	//var tokenList = new ListBuffer[Token]()
+ 	
+	def get_next_t(s: String) =
 	{	
-		println(pos)
-		println(c)
-		if(c.isDigit)
+		var lineList = new ListBuffer[Token]()
+		var pos = 0
+		if((s indexOf "var")== 0)
 		{
-			println("digit")
-			tokenList += new Token("DIGITO", c)
-
+			lineList += new Token("VAR", 'v')
+			pos = pos+3
 		}
-		if(c=='.')
-		{
-			tokenList += new Token("PUNTO", c)
-		}
-		if(c== ';')
-		{
-			tokenList += new Token("ENDL" , c)
-		}
-		if(c == '+')
-		{
-			println("suma")
-
-			tokenList += new Token("SUMA", c)
+		var lista = s.toList
+		while(pos< lista.length)
+ 		{
+	 		
+			var c = lista(pos)
 			
-		}
-		if(c == '-')
-		{
-			println("resta")
-			tokenList += new Token("RESTA", c)
-		}
-		
-		if(c == '*')
-		{
-			println("mult")
-			tokenList += new Token("MULTIPLICACION", c)
-		}
-		
-		if(c == '/')
-		{
-			println("div")
-			tokenList += new Token("DIVISION", c)
-		}
-		if(c == '^')
-		{
-			println("potencia")
-			tokenList += new Token("POTENCIA",c)
-		}
-
-		if(c == '%')
-		{
-			println("modulo")
-			tokenList += new Token("MODULO", c)
-		}
-		if(c == '=')
-		{
-			println("Igualdad")
-			tokenList += new Token("IGUALDAD", c)
-		}
-
-		for(d<-variables)
-		{
-			if(c==d)
+			if(c.isDigit)
 			{
-				println("letra")
-				tokenList += new Token("LETRA",c)
+				println("digit")
+				lineList += new Token("DIGITO", c)
+
 			}
+			if(c=='.')
+			{
+				lineList  += new Token("PUNTO", c)
+			}
+			if(c == '+')
+			{
+				println("suma")
+
+				lineList  += new Token("SUMA", c)
+				
+			}
+			if(c == '-')
+			{
+				println("resta")
+				lineList  += new Token("RESTA", c)
+			}
+			
+			if(c == '*')
+			{
+				println("mult")
+				lineList  += new Token("MULTIPLICACION", c)
+			}
+			
+			if(c == '/')
+			{
+				println("div")
+				lineList  += new Token("DIVISION", c)
+			}
+			if(c == '^')
+			{
+				println("potencia")
+				lineList  += new Token("POTENCIA",c)
+			}
+
+			if(c == '%')
+			{
+				println("modulo")
+				lineList  += new Token("MODULO", c)
+			}
+			if(c == '=')
+			{
+				println("Igualdad")
+				lineList += new Token("IGUALDAD", c)
+			}
+
+			for(d<-variables)
+			{
+				if(c==d)
+				{
+
+					println("variable " + c)
+					lineList += new Token("LETRA",c)
+					
+				}
+			}
+			pos = pos + 1	
 		}
-		
+		lineList
 		
 
 	}
@@ -137,8 +153,14 @@ class Interpreter(archivo: String){
 
  class Parser(tokens: ListBuffer[Token])
  {
-	val variables = List('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
+ 	println(CompilerFirstTry.variablef.contains('e'))
+
 	var pos = 0;
+	if(tokens(pos).getType =="VAR")
+	{
+		CompilerFirstTry.variablef += (tokens(pos+1).getVal -> 0)
+		pos = pos +1
+	}
 	A()
 //	tokens(pos)
 	def A()
@@ -160,14 +182,15 @@ class Interpreter(archivo: String){
 		if(tokens(pos).getType == "LETRA")
 		{
 			x = true
-			if(tokens(pos).getVal == 'v' && tokens(pos+1).getVal == 'a' && tokens(pos+2).getVal == 'r' && tokens(pos+3).getType == "LETRA")
+			if(CompilerFirstTry.variablef.contains(tokens(pos).getVal))
 			{
-				pos = pos + 3
-				println("var" + tokens(pos).getVal )
-				pos = pos + 1
-
+				x = true
 			}
-					
+			else
+			{
+				println("Error Variable no definida")
+				System.exit(1)
+			}
 		}
 		x	
 	}
