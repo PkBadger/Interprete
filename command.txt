@@ -1,0 +1,868 @@
+ENtro a A
+ENtro a Y
+Sale de Y
+ENtro a E
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O 4
+O
+4
+Sale de O
+Sale de N
+Sale de F
+Z1
+Sale de Z
+Sale de X
+entre a Q
+Sale de Q
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+Sale de Z
+Sale de Z
+Sale de Z
+Sale de Z
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+Sale de Z
+Sale de Z
+Sale de Z
+Sale de Z
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+ENtro a N
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+ENtro a M
+entre a O *
+Sale de O
+Sale de M
+Sale de M
+Sale de M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+Sale de Z
+Sale de Z
+Sale de Z
+Sale de Z
+Sale de X
+Sale de X
+Sale de X
+Sale de E
+Sale de A
+false
