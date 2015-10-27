@@ -27,7 +27,7 @@ object CompilerFirstTry{
 }
 
 
-class Token(tipo : String, valor: Char) {
+class Token(tipo : String, valor: String) {
 	def print(){
 	println(tipo + " " +valor)}
 	def getType=tipo
@@ -74,72 +74,92 @@ class Interpreter(archivo: String){
 		var pos = 0
 		if((s indexOf "var")== 0)
 		{
-			lineList += new Token("VAR", 'v')
+			lineList += new Token("VAR", "variable")
 			pos = pos+3
 		}
 		var lista = s.toList
 		while(pos< lista.length)
  		{
-	 		
+	 		println("init pos " + pos)
+	 		println(lista(21))
 			var c = lista(pos)
 			
 			if(c.isDigit)
 			{
-			
-				lineList += new Token("DIGITO", c)
+				
+				var numero = new StringBuilder
+				var punto = false
+				while(lista(pos).isDigit && pos < lista.length-1)
+				{
+				numero += lista(pos)
+				pos += 1
+					if(lista(pos) == '.' && !punto && pos < lista.length-1)
+					{
+						numero += lista(pos)
+						pos += 1
+						punto = true
+					}
+					println("pos " + pos)
 
-			}
-			if(c=='.')
-			{
-				lineList  += new Token("PUNTO", c)
+				}
+				lineList += new Token("DIGITO", numero.toString)
 			}
 			if(c=='(')
 			{
-				lineList  += new Token("OPEN", c)
+				lineList  += new Token("OPEN", c.toString)
+				pos = pos + 1
 			}
 			if(c==')')
 			{
-				lineList  += new Token("CLOSE", c)
+				lineList  += new Token("CLOSE", c.toString)
+				pos = pos + 1
 			}
 			if(c == '+')
 			{
 			
 
-				lineList  += new Token("SUMA", c)
+				lineList  += new Token("SUMA", c.toString)
+				pos = pos + 1
 				
 			}
 			if(c == '-')
 			{
 				
-				lineList  += new Token("RESTA", c)
+				lineList  += new Token("RESTA", c.toString)
+				pos = pos + 1
 			}
 			
 			if(c == '*')
 			{
 				
-				lineList  += new Token("MULTIPLICACION", c)
+				lineList  += new Token("MULTIPLICACION", c.toString)
+				pos = pos + 1
 			}
 			
 			if(c == '/')
 			{
 			
-				lineList  += new Token("DIVISION", c)
+				lineList  += new Token("DIVISION", c.toString)
+				pos = pos + 1
 			}
 			if(c == '^')
 			{
 			
-				lineList  += new Token("POTENCIA",c)
+				lineList  += new Token("POTENCIA",c.toString)
+				pos = pos + 1
 			}
 
 			if(c == '%')
 			{
 			
-				lineList  += new Token("MODULO", c)
+				lineList  += new Token("MODULO", c.toString)
+				pos = pos + 1
 			}
 			if(c == '=')
 			{
 				
-				lineList += new Token("IGUALDAD", c)
+				lineList += new Token("IGUALDAD", c.toString)
+				pos = pos + 1
 			}
 
 			for(d<-variables)
@@ -148,12 +168,19 @@ class Interpreter(archivo: String){
 				{
 
 					
-					lineList += new Token("LETRA",c)
+					lineList += new Token("LETRA",c.toString)
+					pos = pos + 1
 					
 				}
+
 			}
-			pos = pos + 1	
+			if(pos == lista.length - 1)
+			{
+				pos +=1
+			}
+				
 		}
+
 		lineList
 		
 
@@ -162,18 +189,38 @@ class Interpreter(archivo: String){
 
  class Parser(tokens: ListBuffer[Token])
  {
+ 	var multDiv = 0
+ 	var pot = 0
+ 	var m = 0
  	var result: Double = 0
  	var vari : Char = '0'
  	var tama = tokens.length
 	var pos = 0;
 	if(tokens(pos).getType =="VAR")
 	{
-		CompilerFirstTry.variablef += (tokens(pos+1).getVal -> 0)
+		CompilerFirstTry.variablef += ((tokens(pos+1).getVal.toList)(0) -> 0)
 		if(pos < tama)
 		{pos = pos +1}
 		
 	}
-	println(A)
+	for(c <- tokens)
+	{
+		c.print
+		if(c.getVal == "*"|| c.getVal == "/"||c.getVal == "%")
+		{
+			multDiv +=1
+		}
+		if(c.getVal == "^")
+		{
+			pot +=1
+		}
+		if(c.getType == "DIGITO")
+		{
+			m +=1
+		}
+
+	}
+	//println(A)
 	//println(result)
 //	tokens(pos)
 	def A =
@@ -196,7 +243,7 @@ class Interpreter(archivo: String){
 	{
 		println("ENtro a P")
 		var x = false
-		if(tokens(pos).getVal == '=')
+		if(tokens(pos).getVal == "=")
 		{
 		
 		println(tokens(pos).getVal)
@@ -229,7 +276,7 @@ class Interpreter(archivo: String){
 	{
 		println("entre a Q")
 		var x = false
-		if(tokens(pos).getVal == '+')
+		if(tokens(pos).getVal == "+")
 		{
 		println("Q")
 		println(tokens(pos).getVal)
@@ -237,7 +284,7 @@ class Interpreter(archivo: String){
 			{pos = pos +1}
 			if(E)
 			{x=true}
-			}else if(tokens(pos).getVal == '-')
+			}else if(tokens(pos).getVal == "-")
 			{println("Q")
 			println(tokens(pos).getVal)
 				if(pos < tama)
@@ -256,7 +303,7 @@ class Interpreter(archivo: String){
 		if(Z(0))
 		{//println("X1")
 			x=true
-		}else if(times < 2 && X(times+1) && R)
+		}else if(times < multDiv+1 && X(times+1) && R)
 		{//println("X2")
 			x=true
 		}
@@ -268,21 +315,21 @@ class Interpreter(archivo: String){
 	{
 		println("ENtro a R")
 		var x = false
-		if(tokens(pos).getVal == '*')
+		if(tokens(pos).getVal == "*")
 		{//println("R")
 		println(tokens(pos).getVal)
 			if(pos < tama)
 			{pos = pos +1}
 			if(Z(0))
 			{x=true}
-			}else if(tokens(pos).getVal == '/' )
+			}else if(tokens(pos).getVal == "/" )
 			{//println("R")
 			println(tokens(pos).getVal)
 				if(pos < tama)
 				pos = pos +1
 				if(Z(0))
 				{x=true}
-			}else if(tokens(pos).getVal== '%')
+			}else if(tokens(pos).getVal== "%")
 			{//println("R")
 			println(tokens(pos).getVal)
 				if(pos < tama)
@@ -301,7 +348,7 @@ class Interpreter(archivo: String){
 		if(F)
 		{println("Z1")
 			x=true
-		}else if(times<=2 && Z(times+1) && T)
+		}else if(times < pot+1 && Z(times+1) && T)
 		{println("Z2")
 			x=true
 		}
@@ -313,7 +360,7 @@ class Interpreter(archivo: String){
 	{
 		println("ENtro a T")
 		var x = false
-		if(tokens(pos).getVal == '^')
+		if(tokens(pos).getVal == "^")
 		{	//println("T")
 		println(tokens(pos).getVal)
 			if(pos < tama)
@@ -333,7 +380,7 @@ class Interpreter(archivo: String){
 		if(N(0))
 		{//println("F")
 			x=true
-		}else if(tokens(pos).getVal == '(')
+		}else if(tokens(pos).getVal == "(")
 		{//println("F")
 		println(tokens(pos).getVal)
 			if(pos < tama)
@@ -353,7 +400,7 @@ class Interpreter(archivo: String){
 	{
 		println("ENtro a U")
 		var x = false
-		if(E && tokens(pos).getVal == ')')
+		if(E && tokens(pos).getVal == ")")
 		{
 		//println("U")
 		println(tokens(pos).getVal)
@@ -373,7 +420,7 @@ class Interpreter(archivo: String){
 		{
 			
 			
-			if(CompilerFirstTry.variablef.contains(tokens(pos).getVal))
+			if(CompilerFirstTry.variablef.contains((tokens(pos).getVal.toList)(0)))
 			{
 				x = true
 
@@ -402,7 +449,7 @@ class Interpreter(archivo: String){
 		{
 		
 			x=true
-		}else if(M(0) && tokens(pos).getVal == '.')
+		}else if(m > 0 && M(0) && tokens(pos).getVal == ".")
 		{
 		//println("N")
 		println(tokens(pos).getVal)
@@ -441,19 +488,24 @@ class Interpreter(archivo: String){
 	{
 		println("ENtro a M")
 		var x = false
-		if(O)
-		{
-		//println("M")
-			
-			x=true
-		}else if(times < 2 && M(times+1) &&tokens(pos).getType == "DIGITO" )
-		{
+		if(m > 0)
+		{ 
+			println("Valor de m" + m)
+			m -=1
+			if(O)
+			{
+			//println("M")
+				
+				x=true
+			}else if(times < 2 && M(times+1) &&tokens(pos).getType == "DIGITO" )
+			{
 
-		//println("M")
-		println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
-			x=true
+			//println("M")
+			println(tokens(pos).getVal)
+				if(pos < tama)
+				{pos = pos +1}
+				x=true
+			}
 		}
 		println("Sale de M")
 		x
@@ -471,6 +523,19 @@ Z -> Z T | F
 T-> ^ F
 F -> N | ( U | Y
 U -> E )
+Y -> a | b | c
+N -> N 0 | N 1 | N 2 | N 3 | N 4 | N 5 | N 6 | N 7 | N 8 | N 9 | O | M .
+O -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+M -> M 0 | M 1 | M 2 | M 3 | M 4 | M 5 | M 6 | M 7 | M 8 | M 9 | O*/
+
+
+ /*
+A -> Y = E | E
+E -> X + E | X - E | X
+
+X -> X * Z | X / Z | X % Z | Z
+Z -> Z ^ F | F
+F -> N | ( E ) | Y
 Y -> a | b | c
 N -> N 0 | N 1 | N 2 | N 3 | N 4 | N 5 | N 6 | N 7 | N 8 | N 9 | O | M .
 O -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9

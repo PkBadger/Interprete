@@ -24,12 +24,15 @@ ENtro a N
 entre a O *
 Sale de O
 ENtro a M
+Valor de m6
 entre a O *
 Sale de O
 ENtro a M
+Valor de m5
 entre a O *
 Sale de O
 ENtro a M
+Valor de m4
 entre a O *
 Sale de O
 Sale de M
@@ -39,12 +42,15 @@ ENtro a N
 entre a O *
 Sale de O
 ENtro a M
+Valor de m3
 entre a O *
 Sale de O
 ENtro a M
+Valor de m2
 entre a O *
 Sale de O
 ENtro a M
+Valor de m1
 entre a O *
 Sale de O
 Sale de M
@@ -53,33 +59,9 @@ Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 Sale de N
 Sale de N
 Sale de N
@@ -92,63 +74,15 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 Sale de N
 Sale de N
 Sale de N
@@ -156,146 +90,6 @@ Sale de N
 ENtro a Y
 Sale de Y
 Sale de F
-ENtro a Z
-ENtro a F
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-Sale de N
-Sale de N
-Sale de N
-Sale de N
-ENtro a Y
-Sale de Y
-Sale de F
-ENtro a Z
-ENtro a F
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-Sale de N
-Sale de N
-Sale de N
-Sale de N
-ENtro a Y
-Sale de Y
-Sale de F
-Sale de Z
-Sale de Z
 Sale de Z
 Sale de Z
 ENtro a X
@@ -304,63 +98,15 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 Sale de N
 Sale de N
 Sale de N
@@ -373,63 +119,15 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 Sale de N
 Sale de N
 Sale de N
@@ -437,146 +135,6 @@ Sale de N
 ENtro a Y
 Sale de Y
 Sale de F
-ENtro a Z
-ENtro a F
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-Sale de N
-Sale de N
-Sale de N
-Sale de N
-ENtro a Y
-Sale de Y
-Sale de F
-ENtro a Z
-ENtro a F
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-ENtro a N
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
-Sale de N
-Sale de N
-Sale de N
-Sale de N
-ENtro a Y
-Sale de Y
-Sale de F
-Sale de Z
-Sale de Z
 Sale de Z
 Sale de Z
 ENtro a X
@@ -585,63 +143,15 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 Sale de N
 Sale de N
 Sale de N
@@ -654,63 +164,39 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+Sale de Z
+Sale de Z
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
 entre a O *
 Sale de O
-ENtro a M
+ENtro a N
 entre a O *
 Sale de O
-ENtro a M
+ENtro a N
 entre a O *
 Sale de O
-Sale de M
-Sale de M
-Sale de M
+ENtro a N
+entre a O *
+Sale de O
 Sale de N
 Sale de N
 Sale de N
@@ -723,63 +209,39 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+Sale de Z
+Sale de Z
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
 entre a O *
 Sale de O
-ENtro a M
+ENtro a N
 entre a O *
 Sale de O
-ENtro a M
+ENtro a N
 entre a O *
 Sale de O
-Sale de M
-Sale de M
-Sale de M
+ENtro a N
+entre a O *
+Sale de O
 Sale de N
 Sale de N
 Sale de N
@@ -792,63 +254,15 @@ ENtro a F
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 ENtro a N
 entre a O *
 Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-ENtro a M
-entre a O *
-Sale de O
-Sale de M
-Sale de M
-Sale de M
 Sale de N
 Sale de N
 Sale de N
@@ -858,8 +272,100 @@ Sale de Y
 Sale de F
 Sale de Z
 Sale de Z
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
 Sale de Z
 Sale de Z
+ENtro a X
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+ENtro a Z
+ENtro a F
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+ENtro a N
+entre a O *
+Sale de O
+Sale de N
+Sale de N
+Sale de N
+Sale de N
+ENtro a Y
+Sale de Y
+Sale de F
+Sale de Z
+Sale de Z
+Sale de X
+Sale de X
+Sale de X
+Sale de X
 Sale de X
 Sale de X
 Sale de X
