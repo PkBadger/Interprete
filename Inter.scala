@@ -4,14 +4,6 @@ import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
 import scala.math.pow
 
-/*val INTEGER = "INTEGER"
-val PLUS = "PLUS"
-val MINUS = "MINUS"
-val EOF = "EOF"*/
-
-//para multilineas, tomamos el token ; y a lo que sigue le aplicamos la gramatica
-
-
 object Inter{ 
 	var variablef:Map[Char,Double] = Map()
 	variablef += ('e' -> 2.718281828459045)
@@ -57,14 +49,172 @@ class Interpreter(archivo: String){
  	val variables = List('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
  	val igualdades = List("<=",">=","==","my","mn")
  	var pos = 0
+ 
  	while(pos< texto.length)
  	{
- 		//println("Volvemos aqui1 ")
+ 		
  		var y = texto(pos)
- 		val comm = y indexOf("//")
- //		if(comm  0)
+ 		val whiles = y indexOf("while(")
+ 		if(whiles == 0)
+ 		{
+ 			
+ 			val fina = y lastIndexOf(')')
+			if(fina < 0)
+			{
+				println("Error de sintaxis")
+
+			}
+			else
+			{	
+				for(ig <-igualdades)
+				{
+
+					//println("Volvemos aqui2 ") 
+					val inIg = y indexOf(ig)
+					if(inIg >0)
+					{
+						var line = y.toList
+						var lineList = get_next_t(y,whiles+6,inIg-1)
+						var pars = new Parser(lineList)
+		 				var res = pars.Get_result
+
+		 				var lineList2 = get_next_t(y,inIg+2,fina-1)
+		 				var pars2 = new Parser(lineList2)
+		 				var res2 = pars2.Get_result
+		 				if(ig == "<=")
+		 				{
+		 					if(res._2 <= res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)		
+		 						}
+		 						
+		 					}
+		 				}else if(ig == ">=")
+		 				{
+		 					if(res._2 >= res2._2)
+		 					{
+		 						//println(">=")
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}else if(ig == "==")
+		 				{
+		 					if(res._2 == res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}else if(ig == "my")
+		 				{
+		 					if(res._2 > res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}else if(ig == "mn")
+		 				{
+		 					if(res._2 < res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{	
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)			 							
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}
+		 				
+					}
+				}
+			}
+ 		}
+ 		val fors = y indexOf("for(")
+ 		if(fors == 0)
+ 		{
+ 			val fin = y lastIndexOf(')')
+			if(fin < 0)
+			{
+				println("Error de sintaxis")
+			}
+			else
+			{
+	 			var to = y indexOf("to")
+	 			if(to >0)
+	 			{
+	 				var lineList = get_next_t(y,fors+4,to-1)
+					var pars = new Parser(lineList)
+			 		var res = pars.Get_result
+
+			 		var lineList2 = get_next_t(y,to+2,fin-1)
+			 		var pars2 = new Parser(lineList2)
+			 		var res2 = pars2.Get_result
+
+			 		var times = res2._2 - res._2
+			 		
+			 		pos = ForTo(times.toInt,pos+1)
+	 			}
+	 			else
+	 			{
+	 				println("Error de sintaxis")
+	 				System.exit(1)
+	 			}
+ 			}
+ 		}
  		val ini = y indexOf("if(")
- 		//println("Volvemos aqui " + ini + " " + pos)
  		if(ini == 0)
  		{
  			val fin = y lastIndexOf(')')
@@ -192,9 +342,10 @@ class Interpreter(archivo: String){
 			}
  			
  		}else{
-
+ 			if(pos < texto.length)
+ 			{y = texto(pos)
  		Exec(pos,0,y.length-1)
- 		pos += 1}
+ 		pos += 1}}
 
  	}
 
@@ -216,7 +367,124 @@ class Interpreter(archivo: String){
 			}
 			
  	}
+
+ 	def Whiles(bol:Boolean, pos1:Int,op:String,valI:Char,valD:Double)=
+ 	{
+ 		println("1")
+ 		var pos = pos1
+ 		var posf = 0
+ 		println("Variables " + valI)
+ 		while(pos < texto.length)
+ 		{
+ 			println("21")
+ 			var end = texto(pos) indexOf("end")
+ 			if(end > -1)
+ 			{
+ 				posf = pos
+ 				pos = texto.length
+ 			}
+ 			pos +=1
+ 		}
+ 		pos = pos1
+ 		//result = Inter.variablef(y._3)
+ 		if(op == "<=")
+ 		{
+ 			while(Inter.variablef(valI) <= valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 		}else if(op == ">=")
+ 		{	
+ 			while(Inter.variablef(valI) >= valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 			
+ 		}else if(op == "==")
+ 		{
+ 			while(Inter.variablef(valI) == valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}	
+ 		}else if(op == "my")
+ 		{
+ 			while(Inter.variablef(valI) > valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 		}else if(op == "mn")
+ 		{
+ 			while(Inter.variablef(valI) < valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 		}
+
+ 		
+ 		posf +1
+ 	}
  	
+ 	def ForTo(times:Int,pos1:Int) =
+ 	{
+ 		var tim = 0
+ 		var pos = pos1
+ 		var posf = 0
+ 			while(pos < texto.length)
+ 			{ 
+ 				var end = texto(pos) indexOf("end")
+ 				if(end > -1)
+ 				{
+ 					posf = pos 
+ 					pos = texto.length
+ 				}
+ 				pos +=1
+ 			}
+ 			pos = pos1
+ 			while(tim < times)
+ 			{ 
+	 			while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			tim+=1
+	 			pos = pos1
+ 			}
+
+ 		posf + 1 
+
+ 	}
  
  	def Ifs(bol: Boolean,pos1:Int) =
  	{
