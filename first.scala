@@ -6,6 +6,12 @@ def main(args: Array[String]){
 	println("Finding needle in haystack" indexOf "nneedle")
 	var vari : Char = '0'
 	
-	println(vari)
+	
+	def X = (true,52)
+	val sum = X
+	if(sum._1)
+	{println("blablabla")}
+		if(sum._2)
+	{println("blebleble")}
  }
 }

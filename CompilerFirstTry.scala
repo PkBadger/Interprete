@@ -2,6 +2,7 @@ import scala.io.Source
 import scala.util.control._
 import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
+import scala.math.pow
 
 /*val INTEGER = "INTEGER"
 val PLUS = "PLUS"
@@ -40,9 +41,9 @@ class Token(tipo : String, valor: String) {
 
 class Interpreter(archivo: String){
 	def print(){
-		//println(archivo)
+		////println(archivo)
 		val texto = archivo.split('\n').map(_.trim.filter(_ >= ' ')).mkString
-		//println(texto)
+		////println(texto)
 		var lineas = texto.split(";")
 		var lex = new Lexer(lineas)
 	}
@@ -61,7 +62,7 @@ class Interpreter(archivo: String){
 		{	
 			d.print
 		}*/
-
+		lineList += new Token("ENDL" ,"FINAL")
 		var pars = new Parser(lineList)
  	}
  
@@ -78,10 +79,11 @@ class Interpreter(archivo: String){
 			pos = pos+3
 		}
 		var lista = s.toList
+		
 		while(pos< lista.length)
  		{
-	 		println("init pos " + pos)
-	 		println(lista(21))
+	 		////println("init pos " + pos + " Why" + lista(pos-1))
+
 			var c = lista(pos)
 			
 			if(c.isDigit)
@@ -89,17 +91,17 @@ class Interpreter(archivo: String){
 				
 				var numero = new StringBuilder
 				var punto = false
-				while(lista(pos).isDigit && pos < lista.length-1)
+				while(pos < lista.length &&lista(pos).isDigit)
 				{
 				numero += lista(pos)
 				pos += 1
-					if(lista(pos) == '.' && !punto && pos < lista.length-1)
+					if(!punto && pos < lista.length && lista(pos) == '.' )
 					{
 						numero += lista(pos)
 						pos += 1
 						punto = true
 					}
-					println("pos " + pos)
+					//println("pos " + pos + " ")
 
 				}
 				lineList += new Token("DIGITO", numero.toString)
@@ -174,10 +176,12 @@ class Interpreter(archivo: String){
 				}
 
 			}
-			if(pos == lista.length - 1)
+			if(c == ' ')
 			{
-				pos +=1
+				pos = pos + 1
 			}
+
+		
 				
 		}
 
@@ -193,228 +197,516 @@ class Interpreter(archivo: String){
  	var pot = 0
  	var m = 0
  	var result: Double = 0
+ 	var result2: Double = 0
+ 	var num: Double = 0
+ 	var numM: Double = 1
  	var vari : Char = '0'
  	var tama = tokens.length
 	var pos = 0;
+	var tokType: String = ""
+	var flagtype = false
+	var tokxType: String = "+"
 	if(tokens(pos).getType =="VAR")
 	{
 		CompilerFirstTry.variablef += ((tokens(pos+1).getVal.toList)(0) -> 0)
-		if(pos < tama)
+		if(pos < tama -1)
 		{pos = pos +1}
 		
 	}
-	for(c <- tokens)
+	var flag = false
+	/*for(t <- tokens)
 	{
-		c.print
-		if(c.getVal == "*"|| c.getVal == "/"||c.getVal == "%")
+		if(!flag && t.getType == "DIGITO")
 		{
-			multDiv +=1
+			result += t.getVal.toDouble
+			flag = true
 		}
-		if(c.getVal == "^")
-		{
-			pot +=1
-		}
-		if(c.getType == "DIGITO")
-		{
-			m +=1
-		}
+	}*/
 
-	}
-	//println(A)
-	//println(result)
+	println(A)
+	println(numM)
+	println(result)
+	
+	
+	////println(result)
 //	tokens(pos)
 	def A =
 	{
-		println("ENtro a A")
+		var thispos = pos
+		//
+//
+//println("ENtro a A")
 		var x = false
-		if(Y && P)
-		{//println("A")
-			x=true
+		if(Y && tokens(pos).getVal == "=")
+		{////println("A")
+			println("=")
+			if(pos < tama -1){
+			pos = pos + 1}
+			if(E)
+			{x=true
+				}
 		}
-		else if(E)
-		{//println("A")
-			x=true
+		else{ 
+			pos = thispos
+			if(E)
+			{////println("A")
+				x=true
+				
+			}
 		}
-		println("Sale de A")
+
+		//
+		if(tokType == "-")
+		{	
+			result -= num
+			println("-Resultado de E " + result)
+		}else if(tokType == "+")
+		{
+			result += num
+			println("+Resultado de E " + result)
+		}
+		else if(tokType == "*")
+		{
+			result *= num
+			println("*Resultado de E " + result)
+		}
+		else if(tokType == "/")
+		{
+			result /= num
+			println("/Resultado de E " + result)
+		}
+		else if(tokType == "%")
+		{
+			result %= num
+			println("%Resultado de E " + result)
+		}
+//
+//println("Sale de A")
 		x
 	}
 
-	def P =
+	/*def P =
 	{
-		println("ENtro a P")
+		//
+//
+//println("ENtro a P")
 		var x = false
 		if(tokens(pos).getVal == "=")
 		{
 		
-		println(tokens(pos).getVal)
-			if(pos < tama)
+		//println(tokens(pos).getVal)
+			if(pos < tama -1)
 			{pos = pos +1}
 			if(E){
 			x =true}
 			
 		}
-		println("Sale de P")
+		////
+//
+//println("Sale de P")
 		x
-	}
+	}*/
 
 	def E:Boolean =
 	{
-		
-		println("ENtro a E")
+		var thispos = pos
+		var thisNum: Double = 0
+		var thisRes = result
+		var thisTok = tokxType
+//println("ENtro a E")
 		var x = false
-		if(X(0) && Q)
-		{//println("E")
-			x=true
-		}else if(X(0))
-		{//println("E")
-			x=true
+
+		if(X && tokens(pos).getVal == "+")
+		{////println("E")
+			thisNum = num
+			println("+Numero de X " + num +tokxType)
+			if(tokxType == "+")
+			{
+				result +=num
+			}else if(tokxType == "-")
+			{
+				result-=num
+			}else if(tokxType == "*")
+			{
+				result *= num
+			}else if(tokxType == "/")
+			{
+				result /= num
+			}else if(tokxType == "%")
+			{
+				result %= num
+			}else if(tokxType == "^")
+			{
+				pow(result,num)
+			}
+			println("+Resultado de X " + result +tokxType)
+			tokxType = "+"
+			if(pos < tama -1){
+			pos = pos + 1}
+			if(E)
+			{x=true
+				if(!flagtype){
+				tokType = "+"
+				flagtype=true }
+				println("+NUmero de E " + num)
+				
+			}
+		}else{
+			pos = thispos
+			result = thisRes
+			tokxType = thisTok
+			if(X && tokens(pos).getVal == "-")
+			{////println( "E")
+			println("-Numero de X " + num + " "+ tokxType )
+				thisNum = num
+				if(tokxType == "+")
+				{
+					result +=num
+				}else if(tokxType == "-")
+				{
+					result-=num
+				}
+				println("-Resultado de X " + result +tokxType)
+				//result -= num
+				
+			
+			tokxType = "-"
+				if(pos < tama -1){
+				pos = pos + 1}
+				if(E)
+				{x=true
+				if(!flagtype){
+				tokType = "-"
+				flagtype=true }
+				//result -= thisNum
+				println("-NUmero de E " + num)
+				
+				
+				
+				
+				}
+			}else{
+				pos = thispos 
+				result = thisRes
+				tokxType = thisTok
+				if(X)
+				{
+					
+					x=true
+				}
+			}
 		}
-		println("Sale de E")
+		//
+//
+//println("Sale de E")
 		x
 	}
-	def Q = 
+	/*def Q = 
 	{
-		println("entre a Q")
+		////
+//println("ENtre a Q")
 		var x = false
 		if(tokens(pos).getVal == "+")
 		{
-		println("Q")
-		println(tokens(pos).getVal)
-			if(pos < tama)
+		//println("Q")
+		//println(tokens(pos).getVal)
+			if(pos < tama -1)
 			{pos = pos +1}
 			if(E)
 			{x=true}
 			}else if(tokens(pos).getVal == "-")
-			{println("Q")
-			println(tokens(pos).getVal)
-				if(pos < tama)
+			{//println("Q")
+			//println(tokens(pos).getVal)
+				if(pos < tama -1)
 				{pos = pos +1}
 				if(E)
 				{x=true}
 			}
-			println("Sale de Q")
+			////
+//
+//println("Sale de Q")
 		x
-	}
+	}*/
 
-	def X(times: Int):Boolean =
+	def X:Boolean =
 	{
-		println("ENtro a X")
+		//
+//
+//println("ENtro a X")
 		var x = false
-		if(Z(0))
-		{//println("X1")
-			x=true
-		}else if(times < multDiv+1 && X(times+1) && R)
-		{//println("X2")
+		if(Z && XP)
+		{////println("X1")
 			x=true
 		}
-		println("Sale de X")
+		//
+//
+//println("Sale de X")
 		x
 	}
+	def XP:Boolean =
+	{
+		//
+//
+//println("ENtro a XP ")
+		var x = false
+		if( tokens(pos).getVal == "*")
+		{println("* " + result)
+			if(tokxType == "+")
+			{
+				result +=num
+			}else if(tokxType == "-")
+			{
+				result-=num
+			}else if(tokxType == "*")
+			{
+				numM *= num
+			}else if(tokxType == "/")
+			{
+				numM /= num
+			}else if(tokxType == "%")
+			{
+				numM %= num
+			}else if(tokxType == "^")
+			{
+				pow(numM,num)
+			}
+			tokxType = "*"
 
+			if(pos < tama -1){
+			pos = pos + 1}
+			if(Z && XP)
+			{x=true
+				if(!flagtype)
+				{tokType = "*"
+				flagtype = true}
+			}
+		}else if( tokens(pos).getVal == "/")
+		{////println("X1")
+			if(tokxType == "+")
+			{
+				result +=num
+			}else if(tokxType == "-")
+			{
+				result-=num
+			}else if(tokxType == "*")
+			{
+				result *= num
+			}else if(tokxType == "/")
+			{
+				result /= num
+			}else if(tokxType == "%")
+			{
+				result %= num
+			}else if(tokxType == "^")
+			{
+				pow(result,num)
+			}
+			tokxType = "/"
+			println("/")
+			if(pos < tama -1){
+			pos = pos + 1}
+			if(Z && XP)
+			{x=true
+			if(!flagtype)
+				{tokType = "/"}}
+		}else if( tokens(pos).getVal == "%")
+		{////println("X1")
+			if(tokxType == "+")
+			{
+				result +=num
+			}else if(tokxType == "-")
+			{
+				result-=num
+			}else if(tokxType == "*")
+			{
+				result *= num
+			}else if(tokxType == "/")
+			{
+				result /= num
+			}else if(tokxType == "%")
+			{
+				result %= num
+			}else if(tokxType == "^")
+			{
+				pow(result,num)
+			}
+			tokxType = "%"
+			println("%")
+			if(pos < tama -1){
+			pos = pos + 1}
+			if(Z && XP)
+			{x=true
+			if(!flagtype)
+				{tokType = "%"
+				flagtype = true}}
+			}else 
+			{
+				//println("EPSILON")
+				x = true
+			}
+		//
+//
+//println("Sale de XP")
+		x
+	}
+/*
 	def R = 
 	{
-		println("ENtro a R")
+		////
+//
+//println("ENtro a R")
 		var x = false
 		if(tokens(pos).getVal == "*")
-		{//println("R")
-		println(tokens(pos).getVal)
-			if(pos < tama)
+		{////println("R")
+		//println(tokens(pos).getVal)
+			if(pos < tama -1)
 			{pos = pos +1}
 			if(Z(0))
 			{x=true}
 			}else if(tokens(pos).getVal == "/" )
-			{//println("R")
-			println(tokens(pos).getVal)
-				if(pos < tama)
+			{////println("R")
+			//println(tokens(pos).getVal)
+				if(pos < tama -1)
 				pos = pos +1
 				if(Z(0))
 				{x=true}
 			}else if(tokens(pos).getVal== "%")
-			{//println("R")
-			println(tokens(pos).getVal)
-				if(pos < tama)
+			{////println("R")
+			//println(tokens(pos).getVal)
+				if(pos < tama -1)
 				{pos = pos +1}
 				if(Z(0))
 				{x=true}
 			}
-			println("Sale de R")
+			////
+//
+//println("Sale de R")
 			x
 	}
-
-	def Z(times:Int):Boolean = 
+*/
+	def Z:Boolean = 
 	{
-		println("ENtro a Z")
+		//
+//
+//println("ENtro a Z")
 		var x = false
-		if(F)
-		{println("Z1")
-			x=true
-		}else if(times < pot+1 && Z(times+1) && T)
-		{println("Z2")
+		if(F && ZP)
+		{
 			x=true
 		}
-		println("Sale de Z")
+		//
+//
+//println("Sale de Z")
 		x
 	}
 
-	def T =
+	def ZP:Boolean = 
 	{
-		println("ENtro a T")
+		//
+//
+//println("ENtro a ZP")
 		var x = false
 		if(tokens(pos).getVal == "^")
-		{	//println("T")
-		println(tokens(pos).getVal)
-			if(pos < tama)
+		{
+			println("^")
+			result = pow(result, num)
+			if(pos < tama -1){
+			pos = pos + 1}
+			if(F && ZP)
+			{
+			x=true
+			}
+		}else
+		{
+			x=true
+			//println("EPSILON")
+		}
+		//
+//
+//println("Sale de ZP")
+		x
+	}
+/*
+	def T =
+	{
+		////
+//
+//println("ENtro a T")
+		var x = false
+		if(tokens(pos).getVal == "^")
+		{	////println("T")
+		//println(tokens(pos).getVal)
+			if(pos < tama -1)
 			{pos = pos +1}
 			if(F)
 			{x=true}
 		}
-		println("Sale de T")
+		////
+//
+//println("Sale de T")
 		x
 			
 	}
-
+*/
 	def F =
 	{
-		println("ENtro a F")
+		//
+//
+//println("ENtro a F")
 		var x = false
-		if(N(0))
-		{//println("F")
+		if(N)
+		{////println("F")
 			x=true
 		}else if(tokens(pos).getVal == "(")
-		{//println("F")
-		println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
+		{////println("F")
+			println("(")
+
+			if(pos < tama -1){
+			pos = pos + 1
+		println(pos)}
 			if(U)
 			{x=true}
 		}else if(Y)
-		{//println("F")
+		{////println("F")
 
 			x=true
 		}
-		println("Sale de F")
+		//
+//
+//println("Sale de F")
 		x
 	}
 
-	def U =
+	def U=
 	{
-		println("ENtro a U")
+		//
+//
+//println("ENtro a U")
 		var x = false
 		if(E && tokens(pos).getVal == ")")
 		{
-		//println("U")
-		println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
+			println(")")
+			flagtype = false
+		////println("U")
+		//println(tokens(pos).getVal)
+			
+			if(pos < tama -1){
+			pos = pos + 1
+		println(pos)}
 			x=true
+			
 		}
-		println("Sale de U")
+		//
+//
+//println("Sale de U")
 		x
 	}
 
 	def Y =
 	{	
-		println("ENtro a Y")
+		//
+//
+//println("ENtro a Y")
 		var x = false
 		if(tokens(pos).getType == "LETRA")
 		{
@@ -423,93 +715,52 @@ class Interpreter(archivo: String){
 			if(CompilerFirstTry.variablef.contains((tokens(pos).getVal.toList)(0)))
 			{
 				x = true
-
+				println(tokens(pos).getVal)
 			}
 			else
 			{
-				println("Error Variable no definida")
+				//println("Error Variable no definida")
 				System.exit(1)
 			}
 			
-			println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
+			//println(tokens(pos).getVal)
+			
+			if(pos < tama -1){
+			pos = pos + 1}
 			x = true
 		}
-		println("Sale de Y")
+		//
+//
+//println("Sale de Y")
 		x	
 	}
 
-	def N(times:Int):Boolean =
+	def N:Boolean =
 	{	
-		println("ENtro a N")
+		//
+//
+//println("ENtro a N")
 		var x = false
 		
-		if(O)
+		if(tokens(pos).getType =="DIGITO")
 		{
-		
-			x=true
-		}else if(m > 0 && M(0) && tokens(pos).getVal == ".")
-		{
-		//println("N")
-		println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
-			x=true
-		}else if(times<=2 && N(times+1) && tokens(pos).getType == "DIGITO")
-		{
-		//println("N")
-		println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
-			x=true
-		}
-		println("Sale de N")
-		x
-	}
 
-	def O = 
-	{
-		println("entre a O " +tokens(pos).getVal)
-	//println("ENtro a O")
-		var x = false
-		if(tokens(pos).getType == "DIGITO")
-		{println("O")
-		println(tokens(pos).getVal)
-			if(pos < tama)
-			{pos = pos +1}
-			x=true
-		}
-		println("Sale de O")
-		x
+			println("N " +tokens(pos).getVal)
 
-	}
-	def M(times:Int):Boolean = 
-	{
-		println("ENtro a M")
-		var x = false
-		if(m > 0)
-		{ 
-			println("Valor de m" + m)
-			m -=1
-			if(O)
-			{
-			//println("M")
-				
-				x=true
-			}else if(times < 2 && M(times+1) &&tokens(pos).getType == "DIGITO" )
-			{
-
-			//println("M")
-			println(tokens(pos).getVal)
-				if(pos < tama)
-				{pos = pos +1}
-				x=true
+			if(pos < tama -1){
+			num = tokens(pos).getVal.toDouble
+			pos = pos + 1
+			
 			}
+			x = true
+
 		}
-		println("Sale de M")
+		//
+//
+//println("Sale de N")
 		x
 	}
+
  }
 
  /*
