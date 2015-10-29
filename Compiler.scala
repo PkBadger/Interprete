@@ -190,11 +190,16 @@ class Interpreter(archivo: String){
 
  class Parser(tokens: ListBuffer[Token])
  {
+ 
  	val a = A(0)
 	//println(a._1)
+	if(!a._1)
+	{
+		println("Error de sintaxis")
+	}else{
 	if(!a._4)
 	{println(a._3)}
-	
+	}
 	
 	
 	def A(pos1 : Int) =
@@ -209,7 +214,7 @@ class Interpreter(archivo: String){
 		if(e._1 && tokens(e._2).getVal == "=")
 		{
 			
-			val y = Y(e._2 + 1) 
+			val y = Y(e._2 +1) 
 			if(y._1)
 			{
 				x = true
@@ -258,7 +263,7 @@ class Interpreter(archivo: String){
 				{
 					pos = e._2
 					result =e._3 -  x._3
-					println(x._3 +" - " + e._3 +" = " + result)
+					//println(x._3 +" - " + e._3 +" = " + result)
 					q = true
 				}
 			}else
@@ -500,7 +505,7 @@ class Interpreter(archivo: String){
 		{
 			
 			result = tokens(pos).getVal.toDouble
-			pos = pos + 1
+			pos = pos +	 1
 			x = true
 
 		}
