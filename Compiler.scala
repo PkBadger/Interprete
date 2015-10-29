@@ -101,7 +101,7 @@ class Interpreter(archivo: String){
 					//println("pos " + pos + " ")
 
 				}
-				lineList += new Token("DIGITO", numero.toString)
+				lineList += new Token("DIGITO", numero.toString.reverse)
 			}
 			if(c=='(')
 			{
@@ -505,7 +505,7 @@ class Interpreter(archivo: String){
 		{
 			
 			result = tokens(pos).getVal.toDouble
-			pos = pos +	 1
+			pos = pos + 1
 			x = true
 
 		}
