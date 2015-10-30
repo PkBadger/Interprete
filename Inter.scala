@@ -370,13 +370,13 @@ class Interpreter(archivo: String){
 
  	def Whiles(bol:Boolean, pos1:Int,op:String,valI:Char,valD:Double)=
  	{
- 		println("1")
+ 		//println("1")
  		var pos = pos1
  		var posf = 0
- 		println("Variables " + valI)
+ 		//println("Variables " + valI)
  		while(pos < texto.length)
  		{
- 			println("21")
+ 			//println("21")
  			var end = texto(pos) indexOf("end")
  			if(end > -1)
  			{

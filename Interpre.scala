@@ -4,19 +4,11 @@ import scala.collection.mutable.ListBuffer
 import scala.collection.mutable.Map
 import scala.math.pow
 
-/*val INTEGER = "INTEGER"
-val PLUS = "PLUS"
-val MINUS = "MINUS"
-val EOF = "EOF"*/
-
-//para multilineas, tomamos el token ; y a lo que sigue le aplicamos la gramatica
-
-
-object Inter{ 
+object interpre{ 
 	var variablef:Map[Char,Double] = Map()
 	variablef += ('e' -> 2.718281828459045)
 	variablef +=('p'->3.141592653589793)
-
+	var funcionesF = new ListBuffer[Char]()
 	
 	def main(args: Array[String]){ 
 		
@@ -57,22 +49,197 @@ class Interpreter(archivo: String){
  	val variables = List('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
  	val igualdades = List("<=",">=","==","my","mn")
  	var pos = 0
- 	while(pos< texto.length)
+ 	while(pos < texto.length)
  	{
  		var y = texto(pos)
+ 		val funs = y indexOf("def")
+ 		if(funs > -1)
+ 		{
+ 			Interpre.funcionesF + = (y.toList)(funs + 3)
+ 			println(Interpre.funcionesF(0))
+ 		}
+
+ 	}
+ 	pos = 0
+ 	while(pos< texto.length)
+ 	{
+ 		
+ 		var y = texto(pos)
+ 		val whiles = y indexOf("while(")
+ 		if(whiles == 0)
+ 		{
+ 			
+ 			val fina = y lastIndexOf(')')
+			if(fina < 0)
+			{
+				println("Error de sintaxis")
+
+			}
+			else
+			{	
+				for(ig <-igualdades)
+				{
+
+					//println("Volvemos aqui2 ") 
+					val inIg = y indexOf(ig)
+					if(inIg >0)
+					{
+						var line = y.toList
+						var lineList = get_next_t(y,whiles+6,inIg-1)
+						var pars = new Parser(lineList)
+		 				var res = pars.Get_result
+
+		 				var lineList2 = get_next_t(y,inIg+2,fina-1)
+		 				var pars2 = new Parser(lineList2)
+		 				var res2 = pars2.Get_result
+		 				if(ig == "<=")
+		 				{
+		 					if(res._2 <= res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)		
+		 						}
+		 						
+		 					}
+		 				}else if(ig == ">=")
+		 				{
+		 					if(res._2 >= res2._2)
+		 					{
+		 						//println(">=")
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}else if(ig == "==")
+		 				{
+		 					if(res._2 == res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}else if(ig == "my")
+		 				{
+		 					if(res._2 > res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}else if(ig == "mn")
+		 				{
+		 					if(res._2 < res2._2)
+		 					{
+		 						
+		 						if(pos + 1 < texto.length)
+		 						{	
+		 							pos = Whiles(true,pos +1,ig,line(whiles+6),res2._2)			 							
+		 						}
+
+		 					}
+		 					else 
+		 					{
+		 						if(pos + 1 < texto.length)
+		 						{
+		 							pos = Whiles(false,pos +1,ig,line(whiles+6),res2._2)	
+		 						}
+		 					}
+
+		 				}
+		 				
+					}
+				}
+			}
+ 		}
+ 		val fors = y indexOf("for(")
+ 		if(fors == 0)
+ 		{
+ 			val fin = y lastIndexOf(')')
+			if(fin < 0)
+			{
+				println("Error de sintaxis")
+			}
+			else
+			{
+	 			var to = y indexOf("to")
+	 			if(to >0)
+	 			{
+	 				var lineList = get_next_t(y,fors+4,to-1)
+					var pars = new Parser(lineList)
+			 		var res = pars.Get_result
+
+			 		var lineList2 = get_next_t(y,to+2,fin-1)
+			 		var pars2 = new Parser(lineList2)
+			 		var res2 = pars2.Get_result
+
+			 		var times = res2._2 - res._2
+			 		
+			 		pos = ForTo(times.toInt,pos+1)
+	 			}
+	 			else
+	 			{
+	 				println("Error de sintaxis")
+	 				System.exit(1)
+	 			}
+ 			}
+ 		}
  		val ini = y indexOf("if(")
  		if(ini == 0)
  		{
  			val fin = y lastIndexOf(')')
-			println(fin)
+			
 			if(fin < 0)
 			{
 				println("Error de sintaxis")
 				System.exit(1)
 			}else
 			{
+
 				for(ig <-igualdades)
 				{
+					//println("Volvemos aqui2 ") 
 					val inIg = y indexOf(ig)
 					if(inIg >0)
 					{
@@ -87,7 +254,7 @@ class Interpreter(archivo: String){
 		 				{
 		 					if(res._2 <= res2._2)
 		 					{
-		 						println("<=")
+		 						
 		 						if(pos + 1 < texto.length)
 		 						{
 		 							pos = Ifs(true,pos +1)
@@ -106,7 +273,7 @@ class Interpreter(archivo: String){
 		 				{
 		 					if(res._2 >= res2._2)
 		 					{
-		 						println(">=")
+		 						//println(">=")
 		 						if(pos + 1 < texto.length)
 		 						{
 		 							pos = Ifs(true,pos +1)
@@ -125,7 +292,7 @@ class Interpreter(archivo: String){
 		 				{
 		 					if(res._2 == res2._2)
 		 					{
-		 						println("==")
+		 						
 		 						if(pos + 1 < texto.length)
 		 						{
 		 							pos = Ifs(true,pos +1)
@@ -144,7 +311,7 @@ class Interpreter(archivo: String){
 		 				{
 		 					if(res._2 > res2._2)
 		 					{
-		 						println(">")
+		 						
 		 						if(pos + 1 < texto.length)
 		 						{
 		 							pos = Ifs(true,pos +1)
@@ -163,7 +330,7 @@ class Interpreter(archivo: String){
 		 				{
 		 					if(res._2 < res2._2)
 		 					{
-		 						println("<")
+		 						
 		 						if(pos + 1 < texto.length)
 		 						{
 		 							pos = Ifs(true,pos +1)
@@ -179,73 +346,209 @@ class Interpreter(archivo: String){
 		 					}
 
 		 				}
-		 				println(res._2 + " " + res2._2)
-		 				pos = pos +1
+		 				
 					}
 				}
-				/*var lineList = get_next_t(y,ini+3,fin-1)
-				
-		 		println(res._1 + " " + res._2 + " " + res._3)	 	
-					if(!res._1)
-					{
-						println("Error de sintaxis (Parser)")
-					}else{
-					if(!res._3)
-					{println(res._2)}
-					
-		 			}*/
+				//pos = pos +1
 			}
  			
  		}else{
-
+ 			if(pos < texto.length)
+ 			{y = texto(pos)
  		Exec(pos,0,y.length-1)
- 		pos += 1
+ 		pos += 1}}
 
- 		
-		
  	}
 
- 	def Exec(pos:Int,ini:Int,fin:Int)
+ 	def Exec(pos:Int,ini:Int,fin:Int) 
  	{
+
  		var y = texto(pos)
  		var lineList = get_next_t(y,ini,fin)
+ 
  		var pars = new Parser(lineList)
  		var res = pars.Get_result
- 		println(res._1 + " " + res._2 + " " + res._3)	 	
+ 	//	println(pos + " " + ini + " " + fin) 	
 			if(!res._1)
 			{
-				println("Error de sintaxis (Parser)")
+				println("Error de sintaxis")
 			}else{
 			if(!res._3)
 			{println(res._2)}
 			}
 			
+ 	}
+
+ 	def Whiles(bol:Boolean, pos1:Int,op:String,valI:Char,valD:Double)=
+ 	{
+ 		
+ 		var pos = pos1
+ 		var posf = 0
+ 		
+ 		while(pos < texto.length)
+ 		{
+ 			
+ 			var end = texto(pos) indexOf("end")
+ 			if(end > -1)
+ 			{
+ 				posf = pos
+ 				pos = texto.length
+ 			}
+ 			pos +=1
  		}
+ 		pos = pos1
+ 		//result = interpre.variablef(y._3)
+ 		if(op == "<=")
+ 		{
+ 			while(interpre.variablef(valI) <= valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 		}else if(op == ">=")
+ 		{	
+ 			while(interpre.variablef(valI) >= valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 			
+ 		}else if(op == "==")
+ 		{
+ 			while(interpre.variablef(valI) == valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}	
+ 		}else if(op == "my")
+ 		{
+ 			while(interpre.variablef(valI) > valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 		}else if(op == "mn")
+ 		{
+ 			while(interpre.variablef(valI) < valD)
+ 			{
+ 				while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			pos = pos1
+ 			}
+ 		}
+
+ 		
+ 		posf +1
+ 	}
+ 	
+ 	def ForTo(times:Int,pos1:Int) =
+ 	{
+ 		var tim = 0
+ 		var pos = pos1
+ 		var posf = 0
+ 			while(pos < texto.length)
+ 			{ 
+ 				var end = texto(pos) indexOf("end")
+ 				if(end > -1)
+ 				{
+ 					posf = pos 
+ 					pos = texto.length
+ 				}
+ 				pos +=1
+ 			}
+ 			pos = pos1
+ 			while(tim < times)
+ 			{ 
+	 			while(pos < posf)
+	 			{
+	 				
+	 				Exec(pos,0,texto(pos).length - 1)
+	 				pos +=1
+	 			}
+	 			tim+=1
+	 			pos = pos1
+ 			}
+
+ 		posf + 1 
+
  	}
  
  	def Ifs(bol: Boolean,pos1:Int) =
  	{
  		var pos = pos1
  		var posf = pos
+ 		
  		if(bol)
  		{
+ 			
  			while(pos < texto.length)
  			{
  				var y = texto(pos)
  				val yIn = y indexOf("then")
  				if(yIn >= 0)
  				{   
+ 					
  					pos +=1
  					while (pos < texto.length)
  					{
  						if(((texto(pos)) indexOf("end")) < 0){
-	 						Exec(pos,0,texto(pos).length-1)
+ 							
+	 						Exec(pos,0,texto(pos).length - 1)
 	 						pos += 1
+	 						
+
  						}
  						else
  						{
- 							posf = pos + 1
- 							pos = texto.length
+ 							//println("Creo que entra aqui")
+ 							pos = pos + 1
+ 							if((texto(pos) indexOf ("else")) > -1)
+ 							{
+ 								//println("Hay un else")
+ 								while(pos< texto.length)
+	 							{
+	 								var end = texto(pos)
+	 								if((end indexOf("end"))  > -1)
+	 								{
+	 									posf = pos +1 
+	 									//println("despues " +texto(posf))
+	 									pos = texto.length
+
+	 								}
+	 								pos += 1
+	 							}
+ 							}else
+ 							{
+ 								posf = pos 
+ 								//println("despues " +texto(posf))
+ 								pos = texto.length
+ 							}
+ 							
+ 						
  						}
  					}
  				}
@@ -253,6 +556,7 @@ class Interpreter(archivo: String){
  		}
  		else
  		{
+ 			//println("Entra a else")
  			while(pos < texto.length)
  			{
  				var y = texto(pos)
@@ -272,6 +576,10 @@ class Interpreter(archivo: String){
  							pos = texto.length
  						}
  					}
+ 				}
+ 				else
+ 				{
+ 					pos = pos +1
  				}
  			}
  		}
@@ -432,7 +740,7 @@ class Interpreter(archivo: String){
 			if(y._1)
 			{
 				x = true
-				Inter.variablef +=(y._3->e._3) //resultado devuelto por e
+				interpre.variablef +=(y._3->e._3) //resultado devuelto por e
 
 				asig = true
 				pos = y._2 //posicion devuelta por e
@@ -648,13 +956,13 @@ class Interpreter(archivo: String){
 				
 				pos = y._2
 				x = true
-				if(Inter.variablef.contains(y._3))
+				if(interpre.variablef.contains(y._3))
 				{
 					
-					result = Inter.variablef(y._3)
+					result = interpre.variablef(y._3)
 
 				}else
-				{	println("La variable no fue inicializada")
+				{	println("La variable no fue inicializada " +y._3)
 					System.exit(1)}
 				
 				
