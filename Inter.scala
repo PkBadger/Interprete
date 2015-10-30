@@ -1025,31 +1025,3 @@ class Interpreter(archivo: String){
 	}
  }
 
- /*
-A -> Y P | E
-P -> = E
-E -> X Q | X
-Q -> + E | - E 
-X -> X R | Z
-R -> * Z | / Z | % Z
-Z -> Z T | F
-T-> ^ F
-F -> N | ( U | Y
-U -> E )
-Y -> a | b | c
-N -> N 0 | N 1 | N 2 | N 3 | N 4 | N 5 | N 6 | N 7 | N 8 | N 9 | O | M .
-O -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-M -> M 0 | M 1 | M 2 | M 3 | M 4 | M 5 | M 6 | M 7 | M 8 | M 9 | O*/
-
-
- /*
-A -> Y = E | E
-E -> X + E | X - E | X
-
-X -> X * Z | X / Z | X % Z | Z
-Z -> Z ^ F | F
-F -> N | ( E ) | Y
-Y -> a | b | c
-N -> N 0 | N 1 | N 2 | N 3 | N 4 | N 5 | N 6 | N 7 | N 8 | N 9 | O | M .
-O -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-M -> M 0 | M 1 | M 2 | M 3 | M 4 | M 5 | M 6 | M 7 | M 8 | M 9 | O*/
